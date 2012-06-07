@@ -1,0 +1,8 @@
+- flash.each do |type, message|
+  - alertclass = "alert-" + bootstrap_flash(type)
+  .alert.fade.in{class: alertclass, 'data-alert' => "alert"}
+    %a.close{href: "#", 'data-dismiss' => "alert"} &times;
+    = message
+    - if content_for? :flash_extra
+      = surround "(", ")" do
+        = yield :flash_extra

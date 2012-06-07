@@ -1,0 +1,22 @@
+= form_for @ctf, html: {class: "form-horizontal"} do |f|
+  %fieldset
+    %legend Add a CTF
+    - content_for :flash_extra do
+      = @ctf.errors.full_messages.join(", ").downcase
+    .control-group
+      = f.label :name, class: "control-label"
+      .controls
+        = f.text_field :name, placeholder: "DEFCON 20"
+    .control-group
+      = f.label :start_at, "From", class: "control-label"
+      .controls
+        = f.text_field :start_at
+        %span.help-inline to
+        %span.help-inline
+          = f.text_field :end_at
+    .form-actions
+      = f.submit "Add", class: "btn btn-primary"
+
+- content_for :javascript_onload do
+  :plain
+    $("#ctf_start_at, #ctf_end_at").datetimepicker();

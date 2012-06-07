@@ -1,0 +1,31 @@
+%h1
+  = @ctf.name
+  - if @ctf.start_at
+    = surround "(", ")" do
+      = @ctf.start_at.strftime("%Y/%m/%d")
+      - if @ctf.end_at
+        = "- #{@ctf.end_at.strftime("%Y/%m/%d")}"
+
+%ul.nav.nav-tabs
+  %li.active
+    %a{href: "#scoreboard", 'data-toggle' => "tab"} Scoreboard
+  %li
+    %a{href: "#main-doc", 'data-toggle' => "tab"} Main Doc
+
+.tab-content
+  #scoreboard.tab-pane.active
+    -# assume 5 columns for now
+    - @ctf.categories.each do |category|
+      .column
+        %h2= category.name
+        %ol
+          - category.challenges.each do |challenge|
+            %li{class: challenge.status}
+              = link_to challenge.points, challenge
+  #main-doc.tab-pane
+    %div{id: "ctf_#{@ctf.id}_pad"}
+
+-# don't need to show chat for main-doc
+- content_for :javascript_onload do
+  :plain
+    $("#ctf_#{@ctf.id}_pad").pad({'padId': "ctf_#{@ctf.id}"});

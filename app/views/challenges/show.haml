@@ -1,0 +1,20 @@
+%h1
+  = @challenge.ctf.name
+  &raquo;
+  = @challenge.category.name
+  = @challenge.points
+
+.info-box
+  -# QUESTION GOES HERE
+
+%div.challenge_pad{id: "challenge_#{@challenge.id}_pad"}
+%div.challenge_answers_pad{id: "challenge_#{@challenge.id}_answers_pad"}
+
+- content_for :javascript_onload do
+  :plain
+    $("#challenge_#{@challenge.id}_pad").pad({'padId': "challenge_#{@challenge.id}"});
+    $("#challenge_#{@challenge.id}_answers_pad").pad({
+      'padId': "challenge_#{@challenge.id}_answers",
+      'showControls': false,
+      'showChat': false
+    });

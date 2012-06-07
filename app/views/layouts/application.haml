@@ -1,0 +1,26 @@
+!!!
+%html
+%head
+  %title Shellfish
+  = stylesheet_link_tag    "application", media: "all"
+  = javascript_include_tag "application"
+  = csrf_meta_tags
+%body
+  .navbar.navbar-fixed-top
+    .navbar-inner
+      .container
+        %a.brand{href: "/"} Shellphish
+        %ul.navbar-nav.pull-right
+          %li= link_to "Add CTF", new_ctf_path, class: "btn btn-success"
+        %ul.nav.pull-right
+          - Ctf.all.each do |ctf|
+            %li= link_to ctf.name, ctf
+  #main.container
+    = render partial: "shared/flash", locals: {flash: flash}
+    = yield
+  #footer.container
+    Shellphish &copy; 2012-
+  :javascript
+    $(function() {
+      #{yield :javascript_onload}
+    });

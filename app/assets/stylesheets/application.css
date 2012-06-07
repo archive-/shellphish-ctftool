@@ -1,0 +1,47 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require bootstrap.min
+ *= require jquery-ui-1.8.20.custom
+ *= require_self
+*/
+
+/* all */
+html {overflow-y: scroll}
+h1 {margin-bottom: 20px}
+.scoreboard {width: 100%}
+.scoreboard td {border: 1px solid #e3e3e3}
+.scoreboard * {text-align: center !important; vertical-align: middle !important}
+.scoreboard th, .scoreboard td {height: 50px}
+.scoreboard th {background: #e3e3e3}
+.nav-tabs > li {margin-bottom: -2px}
+.column {float: left; width: 20%; text-align: center}
+.column h2 {padding: 20px; background: #999}
+.column ol {list-style: none; margin-left: 0}
+.column li {padding: 20px 0; background: #ccc; border: 1px solid black; border-left: 0; border-bottom: 0}
+.column a {font-weight: bold; font-size: 1.2em; color: black}
+.column .closed {background: #ff2222; color: #fff}
+
+/* main */
+#main {margin-top: 60px}
+.navbar-nav {list-style: none; margin-bottom: 0}
+.challenge_pad {float: left; width: 60%}
+.challenge_answers_pad {overflow: hidden; zoom: 1}
+
+/* footer */
+#footer {margin: 20px auto 60px; border-top: 1px solid #ccc; padding-top: 20px}
+
+/* jquery-ui datetime addon */
+.ui-timepicker-div .ui-widget-header { margin-bottom: 8px; }
+.ui-timepicker-div dl { text-align: left; }
+.ui-timepicker-div dl dt { height: 25px; margin-bottom: -25px; }
+.ui-timepicker-div dl dd { margin: 0 10px 10px 65px; }
+.ui-timepicker-div td { font-size: 90%; }
+.ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }

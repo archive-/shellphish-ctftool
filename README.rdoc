@@ -1,0 +1,36 @@
+= Shellphish-ctftool
+
+This is a PROTOTYPE. Use at your own (minimal) risk.
+
+If run in an open network, may want to change
+<tt>Web::Application.config.secret_token</tt> in
+<tt>./config/initializers/secret_token.rb</tt>.
+
+== Setup etherpad-lite
+
+    $ cd ./etherpad-lite
+    $ bin/run.sh
+
+Then check http://localhost:9001.
+
+== Setup the Rails app
+
+You need <tt>ruby 1.9.3</tt> and <tt>rubygems</tt>.
+
+I recommend using <tt>rvm</tt>, but you don't need to.
+
+After that, do the following:
+
+    $ gem install bundler
+    $ bundle install
+    $ rails s[erver]
+
+Then check http://localhost:3000.
+
+== Upcoming Features
+
+* Etherpads initializing to empty
+* In-place editing of categories and challenge scores
+* Toggle-able challenge status ("closed", "open", "done")
+* Scoreboard improvements (adding/removing categories/challenges)
+* And much more
