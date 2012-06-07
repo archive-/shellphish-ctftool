@@ -13,6 +13,9 @@ If run in an open network, may want to change
 
 Check the <tt>./etherpad-lite</tt> directory is not empty.
 
+Then follow the few instructions regarding etherpad-lite dependencies on
+that project's Github page (https://github.com/Pita/etherpad-lite) [node.js and a few others].
+
     $ cd ./etherpad-lite
     $ bin/run.sh
 
