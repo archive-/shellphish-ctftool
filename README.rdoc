@@ -8,6 +8,11 @@ If run in an open network, may want to change
 
 == Setup etherpad-lite
 
+    $ git submodule init
+    $ git submodule update
+
+Check the <tt>./etherpad-lite</tt> directory is not empty.
+
     $ cd ./etherpad-lite
     $ bin/run.sh
 
