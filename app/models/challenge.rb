@@ -4,4 +4,8 @@ class Challenge < ActiveRecord::Base
   def ctf
     category.ctf
   end
+
+  def status?(status)
+    "active" if self.status == status
+  end
 end

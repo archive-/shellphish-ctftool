@@ -29,10 +29,16 @@ h1 {margin-bottom: 20px}
 .column a {font-weight: bold; font-size: 1.2em; color: black}
 .column .closed {background: #ff2222; color: #fff}
 
+.challenge-closed {background: #da4f49 !important}
+.challenge-open {background: #49afcd !important}
+.challenge-done {background: #5bb75b !important}
+
+.best_in_place textarea {margin-bottom: 0; width: 98%}
+
 /* main */
 #main {margin-top: 60px}
 .navbar-nav {list-style: none; margin-bottom: 0}
-.challenge_pad {float: left; width: 60%}
+.challenge_pad {float: left; width: 50%; margin-right: 20px}
 .challenge_answers_pad {overflow: hidden; zoom: 1}
 
 /* footer */

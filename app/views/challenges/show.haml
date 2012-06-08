@@ -1,14 +1,24 @@
+.btn-group.pull-right
+  -# TODO these should be forms not links...
+  = link_to "Closed", challenge_path(status: "closed"), method: :put, class: "btn btn-danger #{@challenge.status?('closed')}"
+  = link_to "Open", challenge_path(status: "open"), method: :put, class: "btn btn-info #{@challenge.status?('open')}"
+  = link_to "Done", challenge_path(status: "done"), method: :put, class: "btn btn-success #{@challenge.status?('done')}"
+
 %h1
-  = @challenge.ctf.name
+  = link_to @challenge.ctf.name, @challenge.ctf
   &raquo;
   = @challenge.category.name
   = @challenge.points
 
-.info-box
-  -# QUESTION GOES HERE
+.info-box.well
+  = best_in_place @challenge, :description, type: :textarea, nil: "Click to enter challenge"
 
-%div.challenge_pad{id: "challenge_#{@challenge.id}_pad"}
-%div.challenge_answers_pad{id: "challenge_#{@challenge.id}_answers_pad"}
+.challenge_pad
+  %h2 Challenge Document
+  %div{id: "challenge_#{@challenge.id}_pad"}
+.challenge_answers_pad
+  %h2 Answers Tried
+  %div{id: "challenge_#{@challenge.id}_answers_pad"}
 
 - content_for :javascript_onload do
   :plain

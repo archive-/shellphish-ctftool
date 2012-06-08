@@ -17,10 +17,10 @@
     -# assume 5 columns for now
     - @ctf.categories.each do |category|
       .column
-        %h2= category.name
+        %h2= best_in_place category, :name, type: :input
         %ol
           - category.challenges.each do |challenge|
-            %li{class: challenge.status}
+            %li{class: "challenge-#{challenge.status}"}
               = link_to challenge.points, challenge
   #main-doc.tab-pane
     %div{id: "ctf_#{@ctf.id}_pad"}

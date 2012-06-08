@@ -11,10 +11,13 @@ class CtfsController < ApplicationController
     @ctf.start_at = DateTime.strptime(start_at, format) if start_at
     @ctf.end_at = DateTime.strptime(end_at, format) if end_at
     if @ctf.save
+      $ether.pad("ctf_#{@ctf.id}").text = ""
       5.times do |i|
         category = Category.create(ctf_id: @ctf.id, name: "Untitled")
         5.times do |j|
           challenge = Challenge.create(category_id: category.id, points: (j+1) * 100, status: "closed")
+          $ether.pad("challenge_#{challenge.id}").text = ""
+          $ether.pad("challenge_#{challenge.id}_answers").text = ""
         end
       end
       return redirect_to @ctf,
