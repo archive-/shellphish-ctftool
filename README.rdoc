@@ -31,6 +31,7 @@ After that, do the following:
 
     $ gem install bundler
     $ bundle install
+    $ rake db:migrate
     $ rails s[erver]
 
 Then check http://localhost:3000.
