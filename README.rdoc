@@ -37,11 +37,9 @@ Then check http://localhost:3000.
 
 == Upcoming Features
 
-```
-[x] Etherpads initializing to empty
-[x] In-place editing of categories and challenge scores
-[x] Toggle-able challenge status ("closed", "open", "done")
-[ ] Scoreboard improvements (adding/removing categories/challenges)
-[x] Added headers to challenge page documents
-[ ] And much more
-```
+    [x] Etherpads initializing to empty
+    [x] In-place editing of categories and challenge scores
+    [x] Toggle-able challenge status ("closed", "open", "done")
+    [ ] Scoreboard improvements (adding/removing categories/challenges)
+    [x] Added headers to challenge page documents
+    [ ] And much more
